@@ -1,0 +1,35 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "staticUploads": "../uploads",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "33ccdeb02a3619d39953a0f82c3dd5da8cd55f3ecf8ea6592fe1cfa8835bbae63faf51df652269fc13a86e0fe9229ebb3af06fef71cb9413b65a1886a5bb64e68a84efd0d5cf9611a56b370d4910ae57e064998d91d0ffa83bc030f64d394913f2d5b26e7fa310a598742c7953482fb93972ec7c7d5ae114aac4c88ad92a3eb7e08bae0c946ef6ea13ed30bf4649c1fb18808c1467fd0ab93933af200098bb64ab2f3509ee33bd331d3940f2acc20d3ab6d21c7e2780c77ed4e5689dce7eb2712899e2a001759e5f943b4da2313325bbdd87879828d50474d92cd4a8065aa3afe39a0e51097513ec253925c4126458680f5e7abd935f084fa443f6a5356aff86",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb+srv://jamie:testing123@feathers-recipe-dev-zgjus.mongodb.net/feathers-recipe-dev"
+}

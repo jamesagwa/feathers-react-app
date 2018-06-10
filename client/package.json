@@ -1,0 +1,50 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": {
+    "/users": {
+      "target": "http://localhost:3030"
+    },
+    "/authentication": {
+      "target": "http://localhost:3030"
+    },
+    "/recipes": {
+      "target": "http://localhost:3030"
+    },
+    "/uploads": {
+      "target": "http://localhost:3030"
+    },
+    "/static.uploads": {
+      "target": "http://localhost:3030"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
+    "localforage": "^1.7.1",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-content-loader": "^3.1.2",
+    "react-dom": "^16.4.0",
+    "react-dropzone": "^4.2.11",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "reactstrap": "^6.0.1",
+    "redux": "^4.0.0",
+    "redux-form": "^7.3.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.9.1",
+    "redux-saga": "^0.16.0",
+    "socket.io-client": "^2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
