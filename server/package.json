@@ -26,6 +26,7 @@
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "start": "node src/",
     "dev": "nodemon src/",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn install yarn install --prefix /client && yarn run build --prefix /client",
     "mocha": "mocha test/ --recursive --exit"
   },
   "dependencies": {
