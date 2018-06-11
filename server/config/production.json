@@ -1,5 +1,5 @@
 {
-  "host": "recipes-app-app.feathersjs.com",
+  "host": "feathers-react-app.herokuapp.com",
   "port": "PORT",
   "public": "../client/build/",
   "staticUploads": "../uploads",
@@ -8,7 +8,7 @@
     "max": 50
   },
   "authentication": {
-    "secret": "SECRET",
+    "secret": "process.env.SECRET",
     "strategies": [
       "jwt",
       "local"
@@ -19,7 +19,7 @@
       "header": {
         "typ": "access"
       },
-      "audience": "https://yourdomain.com",
+      "audience": "https://feathers-react-app.herokuapp.com",
       "subject": "anonymous",
       "issuer": "feathers",
       "algorithm": "HS256",
@@ -31,5 +31,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "MONGO_URL"
+  "mongodb": "process.env.MONGO_URL"
 }
