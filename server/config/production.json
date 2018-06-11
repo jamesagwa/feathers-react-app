@@ -1,6 +1,6 @@
 {
   "host": "feathers-react-app.herokuapp.com",
-  "port": "PORT",
+  "port": "process.env.PORT",
   "public": "../client/build/",
   "staticUploads": "../uploads",
   "paginate": {
