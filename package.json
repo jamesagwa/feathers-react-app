@@ -17,8 +17,8 @@
   "scripts": {
     "test": "yarn run eslint && yarn run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
-    "start": "yarn run start --prefix /server",
-    "heroku-postbuild": "YARN_PRODUCTION=false yarn install --prefix /server && yarn install --prefix /client && yarn run build --prefix /client",
+    "start": "yarn run start --prefix server",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn install --prefix server && yarn install --prefix client && yarn run build --prefix client",
     "mocha": "mocha test/ --recursive --exit"
   }
 }
