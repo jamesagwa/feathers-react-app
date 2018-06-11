@@ -7,7 +7,7 @@ import { DELETE_ITEM, DELETE_ITEM_ERROR, DELETE_ITEM_SUCCESS } from "../actions/
 function* deleteItem(action) {
     try {
         const { itemId } = action;
-        const { accessToken } = yield select(state => state.fetchUser);
+        const { accessToken } = yield select(state => state.fetchUser.accessToken? state.fetchUser : state.regUser);
         const item = yield call(API.deleteFromServer, {
             url:`/recipes/${ itemId }`,
             token: accessToken

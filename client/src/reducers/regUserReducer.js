@@ -1,5 +1,5 @@
 import storage from 'localforage';
-import { persistReducer } from "redux-persist";
+import { persistReducer, PURGE } from "redux-persist";
 
 import { REG_USER_SUCCESS, REG_USER_ERROR } from "../actions/events";
 
@@ -16,6 +16,9 @@ const regUserReducer = ( state={}, action) => {
                 ...state,
                 error: action.error
             };
+        
+        case PURGE:
+            return {};
     
         default:
             return state;

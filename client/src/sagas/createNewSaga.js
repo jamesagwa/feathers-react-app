@@ -11,7 +11,7 @@ function* addNewItem(action) {
 
         //select the accesstoken from the current state, fetchUser
         // send the accessToken with the data for authorization
-        const { accessToken, user: { _id } } = yield select( state => state.fetchUser );
+        const { accessToken, user: { _id } } = yield select( state => state.fetchUser.user? state.fetchUser: state.regUser );
         if (imgURI !== '') {
             fileUri = yield call(API.sendFile, {
                 data: imgURI,

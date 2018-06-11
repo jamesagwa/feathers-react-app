@@ -23,13 +23,18 @@ class RegisterForm extends Component {
     let error = {};
     let isError = false;
 
+    if (fullname.trim() === '') {
+        error.fullname = 'Required. Please provide a name';
+        isError = true;
+    }
+
     if (email.trim() === '') {
-        error.email = 'Required';
+        error.email = 'Required. Please provide an email';
         isError = true;
     }
     
     if (password.trim() === '') {
-        error.password = 'Required';
+        error.password = 'Required. Enter password';
         isError = true;
     }
 
@@ -74,9 +79,9 @@ RegisterForm = reduxForm({
 })(RegisterForm);
 
 const mapStateToProps = state => {
-    const { data, error } = state.regUser;
+    const { user, error } = state.regUser;
     return {
-        user: data,
+        user,
         error,
     }
 };

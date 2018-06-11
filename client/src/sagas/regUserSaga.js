@@ -23,7 +23,7 @@ function* regUser(action) {
         if (userData.error) {
             yield put({ type: REG_USER_ERROR, error: userData.error });
         } else {
-            yield put({ type: REG_USER_SUCCESS, result: { data: userData.data, accessToken } })
+            yield put({ type: REG_USER_SUCCESS, result: { user: userData.data, accessToken } })
         }
 
     } catch (error) {

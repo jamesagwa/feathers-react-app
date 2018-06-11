@@ -1,0 +1,24 @@
+{
+  "name": "feathers-react-recipe",
+  "version": "1.0.0",
+  "description": "A proof of concept for Fullstack React app with Feathersjs",
+  "main": "server/src",
+  "repository": "https://github.com/jamesagwa/feathers-react-app.git",
+  "author": "James Agwa <jamieagwa@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "feathers"
+  ],
+  "engines": {
+    "node": "^8.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "yarn run eslint && yarn run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "start": "yarn run start --prefix /server",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn install --prefix /server && yarn install --prefix /client && yarn run build --prefix /client",
+    "mocha": "mocha test/ --recursive --exit"
+  }
+}

@@ -48,7 +48,7 @@ class NewForm extends Component {
     };
 
     // clear the image preview data
-    clearImage = file => {
+    clearImage = (file=false) => {
         if (file) {
             window.URL.revokeObjectURL(file.preview);
             this.setState(() => ({
@@ -56,6 +56,11 @@ class NewForm extends Component {
             }));
         }
         
+    }
+
+    clearOnClose = () => {
+        this.props.handleOpen();
+        this.clearImage();
     }
 
     // function with passed value fro redux-form
@@ -79,7 +84,7 @@ class NewForm extends Component {
     };
 
     render() {
-        const { handleSubmit, handleOpen } = this.props;
+        const { handleSubmit } = this.props;
         const { files } = this.state;
 
         return(
@@ -118,7 +123,7 @@ class NewForm extends Component {
                             <Field name="description" label="Description" type="text" placeholder="Short description about recipe" component={RenderField}/>
                             <InputGroup>
                             <Input type="submit" value="Create" className="btn btn-dark" />
-                            <Input type="reset" value="Close" className="btn btn-outline-dark" onClick={handleOpen} />
+                            <Input type="reset" value="Close" className="btn btn-outline-dark" onClick={this.clearOnClose} />
                             </InputGroup>
                         </Col>
                     </Row>

@@ -48,8 +48,7 @@ class Dashboard extends Component {
         }));
       }
 
-    toggleNew = (evt) => {
-        evt.preventDefault();
+    toggleNew = () => {
         this.setState((prevState) => ({
           isNewOpen: !prevState.isNewOpen
         }));
@@ -149,8 +148,8 @@ class Dashboard extends Component {
 };
 
 const mapStateToProps = state => ({
-    user: state.regUser.data || state.fetchUser.user,
-    accessToken: state.fetchUser.accessToken,
+    user: state.regUser.user || state.fetchUser.user,
+    accessToken: state.regUser.accessToken || state.fetchUser.accessToken,
     items: state.createNew.items
 });
 
