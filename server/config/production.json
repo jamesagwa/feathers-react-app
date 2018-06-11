@@ -1,6 +1,6 @@
 {
   "host": "feathers-react-app.herokuapp.com",
-  "port": "process.env.PORT",
+  "port": "PORT",
   "public": "../client/build/",
   "staticUploads": "../uploads",
   "paginate": {
@@ -8,7 +8,7 @@
     "max": 50
   },
   "authentication": {
-    "secret": "process.env.SECRET",
+    "secret": "SECRET",
     "strategies": [
       "jwt",
       "local"
@@ -31,5 +31,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "process.env.MONGO_URL"
+  "mongodb": "MONGO_URL"
 }
