@@ -8,7 +8,7 @@ import rootSaga from '../sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const middleWares = [sagaMiddleware];
-let reduxDevTools = null;
+let reduxDevTools;
 
 if (process.env.NODE_ENV === 'development') {
     middleWares.push(logger);
