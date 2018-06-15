@@ -55,11 +55,11 @@ app.configure(channels);
 if (process.env.NODE_ENV === 'production') {
     // custom express 404 middleware route handler
     app.use('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+        res.sendFile(path.join(__dirname, 'client/build/index.html'));
     });
 };
 
-app.use(express.errorHandler({ logger }));
+app.use(express.errorHandler({ html: false, logger }));
 
 app.hooks(appHooks);
 
