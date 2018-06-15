@@ -34,7 +34,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
 // Host the public folder & static files uploaded
-app.use(express.static(app.get('public')));
+app.use('/', express.static(app.get('public')));
 app.use('/static.uploads', express.static(app.get('staticUploads')));
 
 // Set up Plugins and providers
@@ -54,11 +54,11 @@ app.configure(channels);
 // Configure a middleware for 404s and the error handler
 if (process.env.NODE_ENV === 'production') {
     // custom express 404 middleware route handler
-    app.get('*', (req, res) => {
+    app.use('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
-}
-// app.use(express.notFound());
+};
+
 app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
