@@ -55,7 +55,7 @@ app.configure(channels);
 if (process.env.NODE_ENV === 'production') {
     // custom express 404 middleware route handler
     app.use('*', (req, res) => {
-        res.sendFile(path.join('../client/build/index.html'));
+        res.sendFile(path.resolve(process.cwd(), '../client/build/index.html'));
     });
 };
 
